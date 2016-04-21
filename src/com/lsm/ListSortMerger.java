@@ -35,6 +35,7 @@ public interface ListSortMerger {
 
     /**
      * Takes two arrays, combines and sorts them
+     * Assumption: "left" array is already sorted
      *
      * @param left  the "left" array
      * @param right the "right" array

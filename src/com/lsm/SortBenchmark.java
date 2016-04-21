@@ -29,9 +29,12 @@ public class SortBenchmark {
     private static void benchmark(ListSortMerger sortMerger, int leftSize, int rightSize) {
 
         for (int run = 0; run < NUM_ITER; run++) {
+            // make random deterministic
             Random r = new Random(42);
 
+            // left array = sorted -> just insert integers from 0 to len
             int[] left = createArray(leftSize, i -> i);
+            // right array = random integers
             int[] right = createArray(rightSize, i -> r.nextInt());
 
             long start = System.nanoTime();
